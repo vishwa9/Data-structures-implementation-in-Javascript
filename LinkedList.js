@@ -41,6 +41,21 @@ LinkedList.prototype.remove = function(val) {
     }
 }
 
+LinkedList.prototype.reverse = function () {
+    let current = this.head;
+    let temp = current.next;
+    let previous = null;
+    while (current) {
+        current.next = previous;
+        previous = current;
+        current = temp;
+        if (temp) {
+            temp = temp.next;
+        }
+    }
+    this.head = previous;
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -82,5 +97,20 @@ class LinkedList {
                 previous.next = null;
             }
         }
+    }
+
+    reverse() {
+        let current = this.head;
+        let temp = current.next;
+        let previous = null;
+        while (current) {
+            current.next = previous;
+            previous = current;
+            current = temp;
+            if (temp) {
+                temp = temp.next;
+            }
+        }
+        this.head = previous;
     }
 }

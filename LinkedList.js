@@ -56,6 +56,27 @@ LinkedList.prototype.reverse = function () {
     this.head = previous;
 }
 
+LinkedList.prototype.nthNodeFromEnd = function(n) {
+    let current = this.head;
+    let temp = current;
+    let i = 1;
+    if(n < 1) {
+        return 'list length should be greater than 0';
+    }
+    while (i <= n) {
+        if(!temp) {
+            return 'list length is smaller than given number';
+        }
+        temp = temp.next;
+        i++;
+    }
+    while(temp) {
+        current = current.next;
+        temp = temp.next;
+    }
+    return current.value;
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -112,5 +133,26 @@ class LinkedList {
             }
         }
         this.head = previous;
+    }
+
+    nthNodeFromEnd(n) {
+        let current = this.head;
+        let temp = current;
+        let i = 1;
+        if(n < 1) {
+            return 'list length should be greater than 0';
+        }
+        while (i <= n) {
+            if(!temp) {
+                return 'list length is smaller than given number';
+            }
+            temp = temp.next;
+            i++;
+        }
+        while(temp) {
+            current = current.next;
+            temp = temp.next;
+        }
+        return current.value;
     }
 }

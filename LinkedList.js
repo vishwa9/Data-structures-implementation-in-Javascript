@@ -30,7 +30,7 @@ LinkedList.prototype.remove = function(val) {
         while (current.next) {
             if (current.value === val) {
                 previous.next = current.next;
-                break;
+                return;
             }
             previous = current;
             current = current.next;
@@ -73,7 +73,7 @@ class LinkedList {
             while (current.next) {
                 if (current.value === val) {
                     previous.next = current.next;
-                    break
+                    return;
                 }
                 previous = current;
                 current = current.next;

@@ -116,6 +116,23 @@ LinkedList.prototype.deleteNthNodeFromEnd = function(n) {
     }
 }
 
+// detect a loop
+LinkedList.prototype.detectALoop = function() {
+    if(!this.head || !this.head.next) {
+        return false;
+    }
+    let slow = this.head;
+    let fast = this.head;
+    while (slow && fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow && fast && slow.value === fast.value) {
+            return true;
+        }
+    }
+    return false;
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -227,5 +244,21 @@ class LinkedList {
         } else {
             previous.next = current.next;
         }
+    }
+
+    detectALoop() {
+        if(!this.head || !this.head.next) {
+            return false;
+        }
+        let slow = this.head;
+        let fast = this.head;
+        while (slow && fast && fast.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow && fast && slow.value === fast.value) {
+                return true;
+            }
+        }
+        return false;
     }
 }

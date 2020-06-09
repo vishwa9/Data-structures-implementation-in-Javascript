@@ -3,6 +3,7 @@ function LinkedList() {
     this.head = null;
 }
 
+// add node to linked list
 LinkedList.prototype.push = function(val) {
     const node = {
         value: val,
@@ -19,6 +20,7 @@ LinkedList.prototype.push = function(val) {
     }
 }
 
+// remove node from linked list
 LinkedList.prototype.remove = function(val) {
     let current = this.head;
     
@@ -41,6 +43,7 @@ LinkedList.prototype.remove = function(val) {
     }
 }
 
+// reverse the linked list
 LinkedList.prototype.reverse = function () {
     let current = this.head;
     let temp = current.next;
@@ -56,6 +59,7 @@ LinkedList.prototype.reverse = function () {
     this.head = previous;
 }
 
+// find nth node from last
 LinkedList.prototype.nthNodeFromEnd = function(n) {
     let current = this.head;
     let temp = current;
@@ -75,6 +79,41 @@ LinkedList.prototype.nthNodeFromEnd = function(n) {
         temp = temp.next;
     }
     return current.value;
+}
+
+// delete nth from last
+LinkedList.prototype.deleteNthNodeFromEnd = function(n) {
+    let current = this.head;
+    let previous = current;
+    let temp = current;
+    let flag = true;
+    let i = 1;
+    if(n < 1) {
+        return 'list length should be greater than 0';
+    }
+    while (i <= n) {
+        if(!temp) {
+            return 'list length is smaller than given number';
+        }
+        temp = temp.next;
+        i++;
+    }
+    while(temp) {
+        if (flag) {
+            flag = !flag;
+        } else {
+            previous = previous.next;
+        }
+        current = current.next;
+        temp = temp.next;
+    }
+    if (previous.value === current.value) {
+        this.head = current.next;
+    } else if (n === 1) {
+        previous.next = null;
+    } else {
+        previous.next = current.next;
+    }
 }
 
 //ES6 implementation
@@ -154,5 +193,39 @@ class LinkedList {
             temp = temp.next;
         }
         return current.value;
+    }
+
+    deleteNthNodeFromEnd(n) {
+        let current = this.head;
+        let previous = current;
+        let temp = current;
+        let flag = true;
+        let i = 1;
+        if(n < 1) {
+            return 'list length should be greater than 0';
+        }
+        while (i <= n) {
+            if(!temp) {
+                return 'list length is smaller than given number';
+            }
+            temp = temp.next;
+            i++;
+        }
+        while(temp) {
+            if (flag) {
+                flag = !flag;
+            } else {
+                previous = previous.next;
+            }
+            current = current.next;
+            temp = temp.next;
+        }
+        if (previous.value === current.value) {
+            this.head = current.next;
+        } else if (n === 1) {
+            previous.next = null;
+        } else {
+            previous.next = current.next;
+        }
     }
 }

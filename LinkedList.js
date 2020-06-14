@@ -117,7 +117,7 @@ LinkedList.prototype.deleteNthNodeFromEnd = function(n) {
 }
 
 // detect a loop
-LinkedList.prototype.detectALoop = function() {
+LinkedList.prototype.detectALoop = function(common) {
     if(!this.head || !this.head.next) {
         return false;
     }
@@ -127,9 +127,13 @@ LinkedList.prototype.detectALoop = function() {
         slow = slow.next;
         fast = fast.next.next;
         if (slow && fast && slow.value === fast.value) {
+            if (common) {
+                this.commonPoint = slow;
+            }
             return true;
         }
     }
+    this.commonPoint = null;
     return false;
 }
 
@@ -256,9 +260,13 @@ class LinkedList {
             slow = slow.next;
             fast = fast.next.next;
             if (slow && fast && slow.value === fast.value) {
+                if (common) {
+                    this.commonPoint = slow;
+                }
                 return true;
             }
         }
+        this.commonPoint = null;
         return false;
     }
 }

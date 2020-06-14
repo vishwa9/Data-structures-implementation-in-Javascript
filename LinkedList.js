@@ -137,17 +137,37 @@ LinkedList.prototype.detectALoop = function(common) {
     return false;
 }
 
+// below method calculate length of loop
 LinkedList.prototype.lengthOfLoop = function() {
     if(this.detectALoop(true)) {
         let slow = this.commonPoint;
         let counter = 1;
-        while(start.next !== this.commonPoint) {
+        while(slow.next !== this.commonPoint) {
             slow = slow.next;
             counter++;
         }
         return counter;
     } else {
         return 'no loop!!';
+    }
+}
+
+// below method find node from where loop started
+LinkedList.prototype.findNodeWhereLoopStarted = function() {
+    if(this.detectALoop(true)) {
+        let first = this.head;
+        let second = this.commonPoint;
+        if (first === second) {
+            return first;
+        } else {
+            while (first !== second) {
+                first = first.next;
+                second = second.next;
+            }
+            return first;
+        }
+    } else {
+        return 'no loop!';
     }
 }
 
@@ -288,13 +308,31 @@ class LinkedList {
         if(this.detectALoop(true)) {
             let slow = this.commonPoint;
             let counter = 1;
-            while(start.next !== this.commonPoint) {
+            while(slow.next !== this.commonPoint) {
                 slow = slow.next;
                 counter++;
             }
             return counter;
         } else {
             return 'no loop!!';
+        }
+    }
+
+    findNodeWhereLoopStarted() {
+        if(this.detectALoop(true)) {
+            let first = this.head;
+            let second = this.commonPoint;
+            if (first === second) {
+                return first;
+            } else {
+                while (first !== second) {
+                    first = first.next;
+                    second = second.next;
+                }
+                return first;
+            }
+        } else {
+            return 'no loop!';
         }
     }
 }

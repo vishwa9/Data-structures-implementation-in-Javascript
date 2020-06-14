@@ -137,6 +137,20 @@ LinkedList.prototype.detectALoop = function(common) {
     return false;
 }
 
+LinkedList.prototype.lengthOfLoop = function() {
+    if(this.detectALoop(true)) {
+        let slow = this.commonPoint;
+        let counter = 1;
+        while(start.next !== this.commonPoint) {
+            slow = slow.next;
+            counter++;
+        }
+        return counter;
+    } else {
+        return 'no loop!!';
+    }
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -268,5 +282,19 @@ class LinkedList {
         }
         this.commonPoint = null;
         return false;
+    }
+
+    lengthOfLoop() {
+        if(this.detectALoop(true)) {
+            let slow = this.commonPoint;
+            let counter = 1;
+            while(start.next !== this.commonPoint) {
+                slow = slow.next;
+                counter++;
+            }
+            return counter;
+        } else {
+            return 'no loop!!';
+        }
     }
 }

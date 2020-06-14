@@ -1,0 +1,24 @@
+{
+  "name": "data-structures-implementation-in-javascript",
+  "version": "1.0.0",
+  "description": "Data structures and Algorithms implementation in Vanilla Javascript.",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishwa9/Data-structures-implementation-in-Javascript.git"
+  },
+  "keywords": [
+    "data structures",
+    "algorithm",
+    "javascript"
+  ],
+  "author": "vishwa9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishwa9/Data-structures-implementation-in-Javascript/issues"
+  },
+  "homepage": "https://github.com/vishwa9/Data-structures-implementation-in-Javascript#readme"
+}

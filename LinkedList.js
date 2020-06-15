@@ -171,6 +171,29 @@ LinkedList.prototype.findNodeWhereLoopStarted = function() {
     }
 }
 
+// below method rotate the linked list by nth node
+LinkedList.prototype.rotateByNthNode = function(n) {
+    let first = this.head;
+    let second = this.head;
+    let start = this.head;
+    if (n === 0) {
+        return 'number should be greater than 0';
+    }
+    while (second.next) {
+        second = second.next;
+        n--;
+        if (n > 1 && second.next) {
+            first = first.next;
+        }
+        if(n-1 > 0 && !second.next) {
+            return 'given number should be less than or equal to length of linked list';
+        }
+    }
+    this.head = first.next;
+    first.next = null;
+    second.next = start;
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -334,5 +357,27 @@ class LinkedList {
         } else {
             return 'no loop!';
         }
+    }
+
+    rotateByNthNode (n) {
+        let first = this.head;
+        let second = this.head;
+        let start = this.head;
+        if (n === 0) {
+            return 'number should be greater than 0';
+        }
+        while (second.next) {
+            second = second.next;
+            n--;
+            if (n > 1 && second.next) {
+                first = first.next;
+            }
+            if(n-1 > 0 && !second.next) {
+                return 'given number should be less than or equal to length of linked list';
+            }
+        }
+        this.head = first.next;
+        first.next = null;
+        second.next = start;
     }
 }

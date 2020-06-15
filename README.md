@@ -11,3 +11,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Linked List | detectALoop | [Detect a loop](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L120) |
 | Linked List | lengthOfLoop | [calculate length of loop](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L140) |
 | Linked List | findNodeWhereLoopStarted | [Find node where loop started](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L156) |
+| Linked List | rotateByNthNode | [rotate Linked list by nth Node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L175) |

@@ -194,6 +194,32 @@ LinkedList.prototype.rotateByNthNode = function(n) {
     second.next = start;
 }
 
+// node initialized for double linked list
+function doublyLinkedList() {
+    this.head = null;
+}
+
+// method to add node in doubly linked list
+doublyLinkedList.prototype.push = function(val) {
+    const node = {
+        value: val,
+        previous: null,
+        next: null
+    };
+    if (!this.head) {
+        this.head = node;
+    } else {
+        let current = this.head;
+        while (current && current.next) {
+            current = current.next;
+        }
+        current.next = node;
+        const prev = current;
+        current = current.next;
+        current.previous = prev;
+    }
+}
+
 //ES6 implementation
 
 class LinkedList {
@@ -379,5 +405,31 @@ class LinkedList {
         this.head = first.next;
         first.next = null;
         second.next = start;
+    }
+}
+
+class doublyLinkedList {
+    constructor() {
+        this.head = null;
+    }
+
+    push(val) {
+        const node = {
+            value: val,
+            previous: null,
+            next: null
+        };
+        if (!this.head) {
+            this.head = node;
+        } else {
+            let current = this.head;
+            while (current && current.next) {
+                current = current.next;
+            }
+            current.next = node;
+            const prev = current;
+            current = current.next;
+            current.previous = prev;
+        }
     }
 }

@@ -13,3 +13,5 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Linked List | findNodeWhereLoopStarted | [Find node where loop started](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L156) |
 | Linked List | rotateByNthNode | [rotate Linked list by nth Node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L175) |
 | Doubly Linked List | push | [Push node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/LinkedList.js#L203) |
+| ------------- | ------------- | ------------- |
+| Tree | push | [Push node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/tree.js#L13) |

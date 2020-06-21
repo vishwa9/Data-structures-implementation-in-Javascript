@@ -15,3 +15,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Doubly Linked List | push | [Push node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/LinkedList.js#L203) |
 | ------------- | ------------- | ------------- |
 | Tree | push | [Push node](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L13) |
+| Tree | findMin | [Find minimum element](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L38) |

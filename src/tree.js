@@ -55,3 +55,11 @@ BinarySearchTree.prototype.findMax = function(root) {
     }
     return root.value;
 }
+
+//find height of tree
+BinarySearchTree.prototype.findHeight = function(root) {
+    if(!root) {
+        return -1;
+    }
+    return Math.max(this.findHeight(root.left), this.findHeight(root.right)) + 1;
+}

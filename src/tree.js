@@ -33,3 +33,14 @@ BinarySearchTree.prototype.push = function(val) {
         }
     }
 }
+
+// find minimum element in tree
+BinarySearchTree.prototype.findMin = function(root) {
+    if (!root) {
+        return 'tree is empty';
+    }
+    while (root.left) {
+        root = root.left;
+    }
+    return root.value;
+}

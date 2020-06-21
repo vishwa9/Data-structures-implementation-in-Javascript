@@ -44,3 +44,14 @@ BinarySearchTree.prototype.findMin = function(root) {
     }
     return root.value;
 }
+
+// find maximum element in tree
+BinarySearchTree.prototype.findMax = function(root) {
+    if (!root) {
+        return 'tree is empty';
+    }
+    while (root.right) {
+        root = root.right;
+    }
+    return root.value;
+}

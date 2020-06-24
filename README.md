@@ -18,3 +18,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Tree | findMin | [Find minimum element](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L38) |
 | Tree | findMax | [Find maximum element](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L49) |
 | Tree | findHeight | [find height of tree](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L60) |
+| Tree | findHeight | [find height of tree iteratively](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L68) |

@@ -92,3 +92,23 @@ BinarySearchTree.prototype.heightOfTree = function(root) {
         }
     }
 }
+
+// Breadth first search
+BinarySearchTree.prototype.bfs = function() {
+	if(!this.root) {
+		return null;
+	}	
+	let queue = [];
+	queue.push(this.root);
+	while(queue.length) {
+		let visited = queue.shift();
+		console.log(visited.value);
+		if(visited.left) {
+			queue.push(visited.left);	
+		}
+		if(visited.right) {
+			queue.push(visited.right);
+		}
+	}
+}
+

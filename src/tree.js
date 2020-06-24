@@ -112,3 +112,13 @@ BinarySearchTree.prototype.bfs = function() {
 	}
 }
 
+// Depth first search - Preorder
+BinarySearchTree.prototype.preorder = function(root) {
+    if (!root) {
+        return null;
+    }
+    console.log(root.value);
+    this.preorder(root.left);
+    this.preorder(root.right);
+}
+

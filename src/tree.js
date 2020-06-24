@@ -63,3 +63,32 @@ BinarySearchTree.prototype.findHeight = function(root) {
     }
     return Math.max(this.findHeight(root.left), this.findHeight(root.right)) + 1;
 }
+
+// height of tree iteratively
+BinarySearchTree.prototype.heightOfTree = function(root) {
+    if (!root) {
+        return null;
+    }
+    let height = -1;
+    let nodeCount = 0;
+    let queue = [];
+    queue.push(root);
+    while (1) {
+        nodeCount = queue.length;
+        if (nodeCount < 1) {
+            return height;
+        }
+
+        height++;
+        while (nodeCount) {
+            let node = queue.shift();
+            if (node.left) {
+                queue.push(node.left);
+            }
+            if(node.right) {
+                queue.push(node.right);
+            }
+            nodeCount--;
+        }
+    }
+}

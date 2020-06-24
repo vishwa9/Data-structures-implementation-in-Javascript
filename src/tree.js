@@ -122,3 +122,12 @@ BinarySearchTree.prototype.preorder = function(root) {
     this.preorder(root.right);
 }
 
+// Depth first search - Inorder
+BinarySearchTree.prototype.inorder = function(root) {
+    if (!root) {
+        return null;
+    }
+    this.inorder(root.left);
+    console.log(root.value);
+    this.inorder(root.right);
+}

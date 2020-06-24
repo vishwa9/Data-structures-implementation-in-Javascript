@@ -131,3 +131,13 @@ BinarySearchTree.prototype.inorder = function(root) {
     console.log(root.value);
     this.inorder(root.right);
 }
+
+// Depth first search - Postorder
+BinarySearchTree.prototype.postorder = function(root) {
+    if (!root) {
+        return null;
+    }
+    this.postorder(root.left);
+    this.postorder(root.right);
+    console.log(root.value);
+}

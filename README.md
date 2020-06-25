@@ -22,3 +22,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Tree | breadth first search | [BFS](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L97) |
 | Tree | preorder | [Preorder](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L116) |
 | Tree | inorder | [Inorder](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L126) |
+| Tree | postorder | [Postorder](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L126) |

@@ -141,3 +141,23 @@ BinarySearchTree.prototype.postorder = function(root) {
     this.postorder(root.right);
     console.log(root.value);
 }
+
+// find bst 
+BinarySearchTree.prototype.isBinarySearchTree = function(root) {
+    return this.isBstUtil(root, -Infinity, +Infinity);
+}
+
+// util to find bst
+BinarySearchTree.prototype.isBstUtil = function(root, min, max) {
+    if (!root) {
+        return true;
+    }
+    if (root.value > min && root.value < max && this.isBstUtil(root.left, min, root.value) && this.isBstUtil(root.right, root.value, max)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// note you can also perform inorder traversal to find bst
+

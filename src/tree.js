@@ -190,3 +190,40 @@ BinarySearchTree.prototype.delete = function(root, value) {
     return root;
 }
 
+// find node in tree
+BinarySearchTree.prototype.find = function(root, value) {
+    if (!root || !value) {
+        return null;
+    }
+    if (root.value > value) {
+        return this.find(root.left, value);
+    } else if (root.value < value) {
+        return this.find(root.right, value);
+    } else {
+        return root;
+    }
+}
+
+// find successor in inorder traversal
+BinarySearchTree.prototype.getSuccessor = function(root, data) {
+    const current = this.find(root, data);
+    if (!current) {
+        return null;
+    }
+    // Case 1: Node has right subtree
+    if (current.right) {
+        return this.min(current.right);
+    }
+    // Case 2: Node has no right subtree
+    let successor = null;
+    let ancestor = root;
+    while (ancestor !== successor) {
+        if (current.value < ancestor.value) {
+            successor = ancestor;
+            ancestor = ancestor.left;
+        } else {
+            ancestor = ancestor.right;
+        }    
+    }
+    return successor;
+}

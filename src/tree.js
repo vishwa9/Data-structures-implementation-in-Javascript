@@ -159,5 +159,34 @@ BinarySearchTree.prototype.isBstUtil = function(root, min, max) {
     }
 }
 
-// note you can also perform inorder traversal to find bst
+// Note: you can also perform inorder traversal to find bst
+
+// delete a node in bst
+BinarySearchTree.prototype.delete = function(root, value) {
+    if (!root) {
+        return 'tree is empty';
+    }
+    if (root.value > value) {
+        root.left = this.delete(root.left, value);
+    } else if (root.value < value) {
+        root.right = this.delete(root.right, value);
+    } else {
+        if (root.left === null && root.right === null) {
+            console.log(root, 'null && null');
+            root = null;
+        } else if (!root.right) {
+            root = root.left;
+            console.log(root, 'null && right');
+        } else if (!root.left) {
+            console.log(root, 'null && left');
+            root = root.right;
+        } else {
+            const node = this.min(root.right);
+            root.value = node;
+            console.log(root, 'node', node);
+            root.right = this.delete(root.right, node);
+        }
+    }
+    return root;
+}
 

@@ -26,3 +26,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Tree | isBST | [isBST](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L146) |
 | Tree | delete | [Delete](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L165) |
 | Tree | getSuccessor | [Inorder Successor](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L208) |
+| Tree | getPredecessor | [Inorder Predecessor](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L232) |

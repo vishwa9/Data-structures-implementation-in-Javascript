@@ -217,7 +217,7 @@ BinarySearchTree.prototype.getSuccessor = function(root, data) {
     // Case 2: Node has no right subtree
     let successor = null;
     let ancestor = root;
-    while (ancestor !== successor) {
+    while (ancestor !== current) {
         if (current.value < ancestor.value) {
             successor = ancestor;
             ancestor = ancestor.left;
@@ -226,4 +226,30 @@ BinarySearchTree.prototype.getSuccessor = function(root, data) {
         }    
     }
     return successor;
+}
+
+// find predecessor in inorder traversal
+BinarySearchTree.prototype.getprededecessor =function(root, data) {
+    let current = this.find(root, value);
+	if(!current) {
+		return null;
+	}
+	// case1: Node has left subTree
+	if(current.left) {
+		return this.max(current.left);
+	}
+	//case2: No left subTree
+	else {
+		let predecessor = null;
+		let ancestor = root;
+		while(ancestor != current) {
+			if(current.value < ancestor.value) {
+				ancestor = ancestor.left;
+			}else {
+				predecessor = ancestor;
+				ancestor = ancestor.right;
+			}
+		}
+		return predecessor;
+	}
 }

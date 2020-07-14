@@ -29,3 +29,6 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Tree | getPredecessor | [Inorder Predecessor](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/tree.js#L232) |
 | ------------- | ------------- | ------------- |
 | Hashing | open hashing | [open hashing Technique](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/HashTables.js#L16) |
+| Hashing | Insert | [Linear Probing](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/HashTables.js#L57) |
+| Hashing | Insert | [Quadratic Probing](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/HashTables.js#L92) |
+| Hashing | Insert | [Double Hashing](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/HashTables.js#L132) |

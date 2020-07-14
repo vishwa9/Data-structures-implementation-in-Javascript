@@ -46,27 +46,27 @@ function search(val) {
 
 // open addressing 
 // Linear Probing
-let hashTable = Array(7);
+let hashTable = Array(10);
+
+function hashFunc(value) {
+    return (2 * value + 3);
+}
+
+const len = hashTable.length;
 
 function insert(value) {
-    let count = 0;
-    let index = value % hashTable.length;
-    const obj = {};
-    obj.key = value;
+    const index = hashFunc(value) % len;
     if (!hashTable[index]) {
-        hashTable[index] = obj;
+        hashTable[index] = value;
     } else {
-        while (hashTable[index]) {
-            count++;
-            index++;
-            if (count > hashTable.length) {
-                return 'array is full';
-            }
-            if (index === hashTable.length) {
-                index = 0;
+        for (let i = 1; i < len; i++) {
+            const newIndex = (index + i) % len;
+            if (!hashTable[newIndex]) {
+                hashTable[newIndex] = value;
+                return;
             }
         }
-        hashTable[index] = obj;
+        return 'list is full';
     }
 }
 
@@ -74,30 +74,20 @@ function search(value) {
     if (!value) {
         return 'not in list';
     }
-    let index = value % hashTable.length;
-    let count = 1;
-    if (hashTable[index].key === value) {
+    let index = hashFunc(value) % len;
+    if (hashTable[index] === value) {
         return 'found';
     }
-    while (count < hashTable.length) {
-        index++;
-        if (index === hashTable.length) {
-            index = 0;
-        }
-        if (hashTable[index].key === value) {
+    for (let i = 1; i < len; i++) {
+        const newIndex = (index + i) % len;
+        if (hashTable[newIndex] === value) {
             return 'found';
         }
-        count++;
     }
     return 'not in list';
 }
 
 // Quadratic probing
-let hashTable = Array(10);
-
-function hashFunc(value) {
-    return (2 * value + 3);
-}
 
 function insert(value) {
     const len = hashTable.length;

@@ -90,7 +90,6 @@ function search(value) {
 // Quadratic probing
 
 function insert(value) {
-    const len = hashTable.length;
     const index = hashFunc(value) % len;
     if (!hashTable[index]) {
         hashTable[index] = value;
@@ -110,8 +109,7 @@ function search(value) {
     if (!value) {
         return;
     }
-    let len = hashTable.length;
-    let index = hashFunc(value) % len;
+    const index = hashFunc(value) % len;
     if (hashTable[index] === value) {
         return "found";
     } else {
@@ -124,3 +122,46 @@ function search(value) {
         return "not found";
     }
 }
+
+// Double hashing
+
+function secondHashFunc(value) {
+    return 3 * value + 1;
+}
+
+function insert(value) {
+    const index = hashFunc(value) % len;
+    if (!hashTable[index]) {
+        hashTable[index] = value;
+    } else {
+        const hashValue = secondHashFunc(value) % len;
+        for (i = 0; i < len; i++) {
+            const newIndex = (index + hashValue*i) % len;
+            if (!hashTable[newIndex]) {
+                hashTable[newIndex] = value;
+                return;
+            }
+        }
+        return 'not stored';
+    }
+}
+
+function search(value) {
+    if (!value) {
+        return 'not found';
+    }
+    const index = hashFunc(value) % len;
+    if (hashTable[index] === value) {
+        return 'found';
+    } else {
+        const hashValue = secondHashFunc(value) % len;
+        for (let i = 0; i < len; i++) {
+            const newIndex = (index + hashValue*i) % len;
+            if(hashTable[newIndex] === value) {
+                return 'found';
+            }
+        }
+        return 'not found';
+    }
+}
+

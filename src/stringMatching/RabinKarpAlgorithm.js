@@ -3,7 +3,7 @@ function rabinKarpSearch(pattern, text, num) {
     const m = pattern.length;
     const n = text.length;
     let i,j = 0;
-    let p = 0; // hash value of patern
+    let p = 0; // hash value of pattern
     let t = 0; // hash value of text
     let h = 1;
     

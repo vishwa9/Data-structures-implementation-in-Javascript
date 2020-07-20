@@ -30,7 +30,7 @@ function insert(val) {
 }
 
 function search(val) {
-    var index = val % 7;
+    var index = val % 10;
     if (Array.isArray(hashTable[index])) {
         const list = hashTable[index];
         for (let i in list) {

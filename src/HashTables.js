@@ -224,3 +224,31 @@ function intersection(first, second) {
     }
     return result;
 }
+
+// 3) Given an array A[] and a number x, check for pair in A[] with sum as x
+
+function pairSum(arr, sum) {
+    let hashTable = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (!hashTable[sum - arr[i]]) {
+            hashTable[arr[i]] = true;
+        } else {
+            return `${arr[i]} and ${sum - arr[i]}`
+        }
+    }
+}
+
+// 4) Given two unsorted arrays, find all pairs whose sum is x
+function pairSumFromTwoArrays(firstArr, secondArr, sum) {
+    const f = firstArr.length;
+    const s = secondArr.length;
+    let hashTable = {};
+    for (let i = 0; i < f; i++) {
+        hashTable[firstArr[i]] = true;
+    }
+    for (let i = 0; i < s; i++) {
+        if (hashTable[sum - secondArr[i]]) {
+            console.log(`${secondArr[i]} and ${sum - secondArr[i]}`);
+        }
+    }
+}

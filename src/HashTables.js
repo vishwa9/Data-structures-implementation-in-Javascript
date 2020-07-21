@@ -126,7 +126,7 @@ function search(value) {
 // Double hashing
 
 function secondHashFunc(value) {
-    return 3 * value + 1;
+    return Math.pow(value, 3) + 1;
 }
 
 function insert(value) {
@@ -165,3 +165,62 @@ function search(value) {
     }
 }
 
+// 20 Hashing technique based questions
+
+// 1) Find whether an array is subset of another array
+function isSubSet(first, second) {
+    const hashTable = {};
+    first.forEach(i => {
+        if(!hashTable[i]) {
+            hashTable[i] = 1;
+        } else {
+            hashTable[i]++;
+        }
+    });
+    console.log('hashTable->', hashTable);
+    for(let i = 0; i < second.length; i++) {
+        if(hashTable[second[i]] > 0) {
+            hashTable[second[i]]--;
+        } else {
+            return 'not a subset';
+        }
+    }
+    console.log('hashTable', hashTable);
+    return 'is a subset';
+}
+
+// 2) Union and Intersection of two Lists
+
+function union(first, second) {
+    let hashTable = {};
+    let result = [];
+        
+    for(let i = 0; i < first.length; i++){
+        if (!hashTable[first[i]]) {
+            hashTable[first[i]] = true;
+            result.push(first[i]);
+        }
+    }
+    for(let j = 0; j < second.length; j++) {
+        if (!hashTable[second[j]]) {
+            hashTable[second[j]] = true;
+            result.push(second[j]);
+        }
+    }
+}
+
+function intersection(first, second) {
+    let hashTable = {};
+    let result = [];
+    for (let i = 0; i < first.length; i++) {
+        if (!hashTable[first[i]]) {
+            hashTable[first[i]] = true;
+        }
+    }
+    for (let j = 0; j < second.length; j++) {
+        if (hashTable[second[j]]) {
+            result.push(second[j]);
+        }
+    }
+    return result;
+}

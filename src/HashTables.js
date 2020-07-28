@@ -252,3 +252,82 @@ function pairSumFromTwoArrays(firstArr, secondArr, sum) {
         }
     }
 }
+
+// 5) Find Itinerary from a given list of tickets
+
+const list = [
+    [
+        "chennai",
+        "bangalore"
+    ],
+    [
+        "bomabay",
+        "delhi"
+    ],
+    [
+        "goa",
+        "chennai"
+    ],
+    [
+        "delhi",
+        "goa"
+    ]
+];
+
+function makeItinerary(list) {
+    const hashMap = new Map(list);
+    let reverseList = JSON.parse(JSON.stringify(list));
+    const reverseHashMap = new Map(reverseList.map(item => item.reverse()));
+    let startingPoint = null;
+    for (let [key, value] of hashMap) {
+        if (!reverseHashMap.has(key)) {
+            startingPoint = key;
+        }
+    }
+    let key = startingPoint;
+    while (hashMap.has(key)) {
+        console.log(`${key} --> ${hashMap.get(key)}`);
+        key = hashMap.get(key);
+    }
+}
+
+// 6) Find four elements a, b, c and d in an array such that a+b = c+d
+const array = [
+    3,
+    4,
+    7,
+    1,
+    2,
+    9,
+    8
+  ];
+function findPairs(list) {
+    let hashMap = new Map();
+    for (let i = 0; i < list.length; i++) {
+        for (let j = i+1; j < list.length; j++) {
+            if (hashMap.has(list[i] + list[j])) {
+                console.log(`${list[i]} ${list[j]}`,hashMap.get(list[i] + list[j]));
+                return;
+            }
+            hashMap.set(list[i] + list[j], {key1: list[i], key2: list[j]});
+        }
+    }
+}
+
+// 7) Find the length of largest subarray with 0 sum
+const list  = [15, -2, 2, -8, 1, 7, 10, 23];
+
+function findSubArrayLength(list) {
+    let hashMap = new Map();
+    let sum = 0;
+    let maxCount = 0;
+    for (let i = 0; i < list.length; i++) {
+        sum += list[i];
+        if (!hashMap.has(sum)) {
+            hashMap.set(sum, i);
+        } else {
+            maxCount = Math.max(maxCount, i - hashMap.get(sum));
+        }
+    }
+    return maxCount;
+}

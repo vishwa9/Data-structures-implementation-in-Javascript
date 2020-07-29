@@ -331,3 +331,36 @@ function findSubArrayLength(list) {
     }
     return maxCount;
 }
+
+// 8) Count distinct elements in every window of size k
+
+function distinctElement(list, size) {
+    let hashMap = {};
+    let count = size - 1;
+    for (let i = 0; i < list.length; i++) {
+        if (i > count) {
+            let diff = i - size;
+            let key = list[diff];
+            if(hashMap[key] > 1) {
+                hashMap[key]--;
+            } else {
+                delete hashMap[key];
+            }
+            if (!hashMap[list[i]]) {
+                hashMap[list[i]] =  1;
+            } else {
+                hashMap[list[i]]++;
+            }
+            console.log(Object.entries(hashMap).length);
+        } else {
+            if (!hashMap[list[i]]) {
+                hashMap[list[i]] =  1;
+            } else {
+                hashMap[list[i]]++;
+            }
+            if (i == count) {
+                console.log(Object.entries(hashMap).length);
+            }
+        }
+    }    
+}

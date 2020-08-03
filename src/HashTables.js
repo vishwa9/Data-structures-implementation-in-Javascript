@@ -364,3 +364,36 @@ function distinctElement(list, size) {
         }
     }    
 }
+
+// 9) Largest subarray with equal number of 0s and 1s 
+// complexity O(n)
+const list = [1, 0, 1, 1, 1, 0, 0];
+function LargestSubArray(arr) {
+    let hashMap = {};
+    let sum = 0;
+    let max_len = 0;
+    let end_index = -1;
+    let start_index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i] === 0 ? -1 : 1;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        
+        if (sum === 0) {
+            max_len = i + 1;
+            end_index = i;
+        }
+        if (hashMap[sum] != null) {
+            if (max_len < (i - hashMap[sum])) {
+                max_len = i - hashMap[sum]; 
+                end_index = i; 
+            }
+        } else {
+            hashMap[sum] = i;
+        }
+    }
+    
+    start_index = (end_index - max_len + 1);
+    console.log('start',start_index, 'end',end_index, 'max',max_len);
+}

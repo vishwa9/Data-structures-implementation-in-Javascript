@@ -18,3 +18,5 @@ const selectionSort = (list) => {
     return list;
 }
 
+selectionSort([2,7,4,1,5,3]) //  [1, 2, 3, 4, 5, 7]
+

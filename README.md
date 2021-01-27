@@ -35,4 +35,12 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | ------------- | ------------- | ------------- |
 | String Matching | rabinKarpSearch | [Rabin Karp Algo](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/stringMatching/RabinKarpAlgorithm.js#L1) |
 | ------------- | ------------- | ------------- |
-| Dynamic Programming | fibonacci with memoization | [fibnacci](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L13) |
+| Dynamic Programming | Fibonacci with memoization | [fibnacci](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L13) |
+| Dynamic Programming | Grid traveller | [grid traveller](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L21) |
+| Dynamic Programming | CanSum | [can Sum](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L50) |
+| Dynamic Programming | HowSum | [how Sum](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L74) |
+| Dynamic Programming | BestSum | [best sum](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L115) |
+| Dynamic Programming | Can Construct | [can construct](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L168)|
+| Dynamic Programming | Count Construct | [count construct](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L194)|
+| Dynamic Programming | All Construct | [all construct](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L221)|
+

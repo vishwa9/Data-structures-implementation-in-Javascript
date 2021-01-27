@@ -34,3 +34,5 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Hashing | Insert | [Double Hashing](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/HashTables.js#L132) |
 | ------------- | ------------- | ------------- |
 | String Matching | rabinKarpSearch | [Rabin Karp Algo](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/stringMatching/RabinKarpAlgorithm.js#L1) |
+| ------------- | ------------- | ------------- |
+| Dynamic Programming | fibonacci with memoization | [fibnacci](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L13) |

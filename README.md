@@ -44,4 +44,5 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Dynamic Programming | Count Construct | [count construct](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L194)|
 | Dynamic Programming | All Construct | [all construct](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/dynamicProgramming/Dynamic-programming.js#L221)|
 | Sorting Algos | Selection Sort | [selection sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Selection-Sort.js) | 
-
+| Sorting Algos | Bubble Sort | [bubble sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Bubble-Sort.js) |
+| Sorting Algos | Insertion Sort | [insertion sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Insertion-Sort.js) |

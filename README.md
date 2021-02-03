@@ -46,4 +46,4 @@ Data structures and Algorithms implementation in Vanilla Javascript.
 | Sorting Algos | Selection Sort | [selection sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Selection-Sort.js) | 
 | Sorting Algos | Bubble Sort | [bubble sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Bubble-Sort.js) |
 | Sorting Algos | Insertion Sort | [insertion sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Insertion-Sort.js) |
-| Sorting Algos | Merge Sort | [merge sort] (https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Merge-Sort.js) |
+| Sorting Algos | Merge Sort | [merge sort](https://github.com/vishwa9/Data-structures-implementation-in-Javascript/blob/master/src/sorting/Merge-Sort.js) |

@@ -1,3 +1,4 @@
+// stable sorting algorithm preserve the relative order of elements
 // In place constant memory
 // Time complexity O(n^2)
 function insertionSort(arr) {
